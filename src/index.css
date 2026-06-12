@@ -1,0 +1,87 @@
+:root {
+  --vc-ink: #18161a;
+  --vc-pencil: #72686f;
+  --vc-paper: #f5f2eb;
+  --vc-card: #ffffff;
+  --vc-light: #eae5dc;
+  --vc-line: #e2dbd0;
+  --vc-accent: #c0442e;
+  --vc-accent-light: #fdf0ed;
+  --vc-stamp: #276148;
+  --vc-stamp-light: #edf5f0;
+  --vc-yellow: #e8b84b;
+  --vc-yellow-light: #fef8e8;
+  --vc-sidebar: #1a1720;
+  --vc-sidebar-hover: rgba(255,255,255,0.07);
+  --vc-sidebar-active: rgba(192,68,46,0.18);
+  --vc-sidebar-active-border: #c0442e;
+
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-brand: 'Caveat', cursive;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  background: var(--vc-paper);
+  font-family: var(--font-ui);
+  color: var(--vc-ink);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: inherit; cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--vc-line); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--vc-pencil); }
+
+/* ── Button transitions ─────────────────────────────────────────── */
+.vc-btn {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  cursor: pointer;
+}
+.vc-btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.vc-btn:active { transform: translateY(0); opacity: 1; }
+.vc-btn-ghost:hover { background: var(--vc-light) !important; }
+
+/* ── Sidebar nav item ───────────────────────────────────────────── */
+.vc-nav-item {
+  transition: background 0.1s ease, color 0.1s ease;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.vc-nav-item:hover { background: var(--vc-sidebar-hover) !important; }
+
+/* ── Card hover ─────────────────────────────────────────────────── */
+.vc-card-click {
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+.vc-card-click:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Row hover ──────────────────────────────────────────────────── */
+.vc-row {
+  transition: background 0.1s ease;
+}
+.vc-row:hover { background: var(--vc-paper) !important; }
+
+/* ── Mobile tabbar icons ────────────────────────────────────────── */
+.vc-tab {
+  transition: color 0.15s ease;
+  cursor: pointer;
+}
